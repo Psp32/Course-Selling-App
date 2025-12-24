@@ -8,7 +8,7 @@ function adminMiddleware(req,res,next){
 
     console.log(decoded)
     if(decoded){
-        res.userId = decoded.id
+        req.userId = decoded.id
         next()
     }else{
         res.status(403).json({
