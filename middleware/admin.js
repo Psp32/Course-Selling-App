@@ -4,7 +4,7 @@ require('dotenv').config()
 function adminMiddleware(req,res,next){
     const token = req.headers.token
     
-    const decoded = jwt.verify(token, process.config.JWT_SECRET_ADMIN)
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_ADMIN)
 
     console.log(decoded)
     if(decoded){

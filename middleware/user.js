@@ -4,7 +4,7 @@ require('dotenv').config()
 function userMiddleware(req,res,next){
     const token = req.headers.token
     
-    const decoded = jwt.verify(token, process.config.JWT_SECRET_USER)
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_USER)
 
     console.log(decoded)
     if(decoded){
